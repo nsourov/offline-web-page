@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hi There!</h1>
+
+    <img src="./cat.jpeg" width="300" height="300" />
+
+    <script>
+      async function registerServiceWorker() {
+        if ("serviceWorker" in navigator) {
+          try {
+            const registration = await navigator.serviceWorker.register(
+              "sw.js"
+            );
+            console.log(
+              "Service Worker registered with scope:",
+              registration.scope
+            );
+          } catch (error) {
+            console.error("Service Worker registration failed:", error);
+          }
+        }
+      }
+
+      registerServiceWorker();
+    </script>
+  </body>
+</html>
